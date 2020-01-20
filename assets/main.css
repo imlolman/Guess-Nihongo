@@ -1,0 +1,55 @@
+.outerBox {
+  background: #2c3e50;
+  height: 100vh;
+}
+
+body {
+  font-family: sans-serif;
+  color: #ecf0f1;
+  background: #2c3e50;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Fugaz One";
+}
+
+.gameBox {
+  height: 20px;
+  margin: auto;
+}
+
+.gameBox .dataOuter {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.gameBox .dataOuter .dataMiddle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.gameBox .dataOuter .dataBottom {
+  display: table-cell;
+  vertical-align: bottom;
+  font-size: 40px;
+  padding-bottom: 40px;
+  color: #95a5a6;
+}
+
+.gameBox .dataOuter .dataInner {
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+  text-align: center;
+}
+
+.gameBox .dataOuter .dataInner .symbolText {
+  font-size: 150px;
+}
+/*# sourceMappingURL=main.css.map */

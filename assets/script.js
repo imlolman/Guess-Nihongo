@@ -1,3 +1,4 @@
+var run = true
 
 displayItem = function(data){
     var rand = data[Math.floor(Math.random() * data.length)];
@@ -5,7 +6,7 @@ displayItem = function(data){
     $('#desc').html('')
     playTimeout(5000, data, function(data){
         $('#desc').html(rand.name)
-        playTimeout(3000, data, displayItem)
+        playTimeout(5000, data, displayItem)
     });
 }
 
@@ -20,11 +21,13 @@ function playTimeout(time, data, callback){
     var onePart = (408.5/time)*smoothness
     var offset = 0
     var timer = setInterval(() => {
-        $(".js-circle-countdown").attr("stroke-dashoffset", offset).attr('stroke',pickHex([255,0,0],[75,181,67],offset/408.5));
-        offset += onePart
-        if (offset > 408.5){
-            callback(data)
-            clearInterval(timer);
+        if(run){
+            $(".js-circle-countdown").attr("stroke-dashoffset", offset).attr('stroke',pickHex([255,0,0],[75,181,67],offset/408.5));
+            offset += onePart
+            if (offset > 408.5){
+                callback(data)
+                clearInterval(timer);
+            }
         }
     }, smoothness);
 }

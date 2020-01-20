@@ -11,13 +11,14 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/main.css">
     <link href="https://fonts.googleapis.com/css?family=Fugaz+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap" rel="stylesheet">
     <title>Konnichiwa</title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container px-lg-5">
         <div class="row">
-            <div class="outerBox col-12 pt-3">
+            <div class="outerBox col-12 pt-3 px-lg-5">
                 <h2>Guess Nihongo 🎉</h2>
                 <div class="gameBox mt-5 col-12 col-lg-6 offset-lg-3 p-0">
                     <div class="wrap flex flex-between flex-mid">
@@ -45,7 +46,6 @@
                                 <div class="dataOuter">
                                     <div class="dataBottom">
                                         <div class="dataInner" id="desc">
-                                            
                                         </div>
                                     </div>
                                 </div>
@@ -53,6 +53,7 @@
                         </div>
                     </div>
                 </div>
+                <button class="btn btn-lg btn-success mt-5 col-12 py-5 holdBTN" onmousedown='run=false' onmouseup='run=true' ontouchstart='run=false' ontouchend='run=true'>Hold</button>
             </div>
         </div>
     </div>

@@ -35,6 +35,8 @@ h3 {
 }
 
 .gameBox .dataOuter .dataBottom {
+  font-family: 'IBM Plex Sans';
+  font-weight: 900;
   display: table-cell;
   vertical-align: bottom;
   font-size: 40px;
@@ -51,5 +53,11 @@ h3 {
 
 .gameBox .dataOuter .dataInner .symbolText {
   font-size: 150px;
+}
+
+.holdBTN {
+  font-family: 'IBM Plex Sans';
+  font-weight: 900;
+  font-size: 50px;
 }
 /*# sourceMappingURL=main.css.map */

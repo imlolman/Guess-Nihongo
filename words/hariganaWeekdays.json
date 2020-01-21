@@ -1,0 +1,29 @@
+[{
+    "symbol": "にちようび",
+    "name": "Nichiyōbi",
+    "meaning": "Sunday"
+},{
+    "symbol": "げつようび",
+    "name": "Getsuyōbi",
+    "meaning": "Monday"
+},{
+    "symbol": "かようび",
+    "name": "Kayōbi",
+    "meaning": "Tuesday"
+},{
+    "symbol": "すいようび",
+    "name": "Suiyōbi",
+    "meaning": "Wednesday"
+},{
+    "symbol": "もくようび",
+    "name": "Mokuyōbi",
+    "meaning": "Thursday"
+},{
+    "symbol": "きんようび",
+    "name": "Kinyōbi",
+    "meaning": "Friday"
+},{
+    "symbol": "どようび",
+    "name": "Doyōbi",
+    "meaning": "Saturday"
+}]

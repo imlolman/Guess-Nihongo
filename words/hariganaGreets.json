@@ -1,0 +1,41 @@
+[{
+    "symbol": "おはようございます",
+    "name": "Ohayou gozaimasu",
+    "meaning": "Good Morning"
+},{
+    "symbol": "はじめまして",
+    "name": "Hajimemashite",
+    "meaning": "Greet while Meeting for the First time"
+},{
+    "symbol": "こんにちは",
+    "name": "Konnichi wa",
+    "meaning": "Hello/Good day/Good Afternoon"
+},{
+    "symbol": "こんばんは",
+    "name": "Konban wa",
+    "meaning": "Good Evening"
+},{
+    "symbol": "おやすみなさい",
+    "name": "Oyasumi nasai",
+    "meaning": "Good Night"
+},{
+    "symbol": "もしもし",
+    "name": "Moshi-Moshi",
+    "meaning": "Telephonic Hello"
+},{
+    "symbol": "じゃまた",
+    "name": "Ja mata",
+    "meaning": "See you later"
+},{
+    "symbol": "どうもありがとうございました",
+    "name": "Dōmo arigatōgozaimashita",
+    "meaning": "Thank You Very Much"
+},{
+    "symbol": "ありがと",
+    "name": "Arigato",
+    "meaning": "Thank you"
+},{
+    "symbol": "ようこそ",
+    "name": "Yōkoso",
+    "meaning": "Welcome"
+}]

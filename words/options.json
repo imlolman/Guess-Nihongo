@@ -11,5 +11,17 @@
           "file": "words/harigana2.json"
         }
       ]
+    },{
+      "name": "Harigana Words",
+      "options": [
+        {
+          "name": "Greetings",
+          "file": "words/hariganaGreets.json"
+        },
+        {
+          "name": "WeekDays",
+          "file": "words/hariganaWeekdays.json"
+        }
+      ]
     }
   ]

@@ -4,19 +4,22 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'IBM Plex 'Sans;
   color: #ecf0f1;
   background: #2c3e50;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-h1,
-h2,
-h3 {
+h1, h2 {
   font-family: "Fugaz One";
 }
 
 .gameBox {
-  height: 20px;
+  height: 500px;
   margin: auto;
 }
 
@@ -55,9 +58,41 @@ h3 {
   font-size: 150px;
 }
 
-.holdBTN {
-  font-family: 'IBM Plex Sans';
-  font-weight: 900;
-  font-size: 50px;
+.head.custom-control-label::before,
+.head.custom-control-label::after,
+.sub.custom-control-label::before,
+.sub.custom-control-label::after {
+  width: 1.5rem;
+  height: 1.5rem;
+  left: -2rem;
+}
+
+.sub {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.checkbox-success .custom-control-input:focus ~ .custom-control-label::before {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(92, 184, 92, 0.25);
+          box-shadow: 0 0 0 0.2rem rgba(92, 184, 92, 0.25);
+}
+
+.checkbox-success input[type="checkbox"]:checked + label::before,
+.checkbox-success input[type="radio"]:checked + label::before {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+
+.buttons {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 10px;
+}
+
+.actions {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
 }
 /*# sourceMappingURL=main.css.map */

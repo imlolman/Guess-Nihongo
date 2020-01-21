@@ -1,0 +1,40 @@
+[
+    {
+      "name": "Harigana Charts",
+      "options": [
+        {
+          "name": "Chart 1 (Without Dakuten)",
+          "file": "words/harigana1.json"
+        },
+        {
+          "name": "Chart 2 (With Dakuten)",
+          "file": "words/harigana2.json"
+        },
+        {
+          "name": "Chart 3 (With ya yu yo)",
+          "file": "words/harigana3.json"
+        }
+      ]
+    },
+    {
+      "name": "Harigana Words",
+      "options": [
+        {
+          "name": "Greetings",
+          "file": "words/hariganaGreets.json"
+        },
+        {
+          "name": "WeekDays",
+          "file": "words/hariganaWeekdays.json"
+        },
+        {
+          "name": "Nouns",
+          "file": "words/hariganaNouns.json"
+        },
+        {
+          "name": "Common Words",
+          "file": "words/commonWords.json"
+        }
+      ]
+    }
+  ]

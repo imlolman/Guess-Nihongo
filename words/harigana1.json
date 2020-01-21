@@ -29,21 +29,6 @@
     "symbol": "こ",
     "name": "ko"
 },{
-    "symbol": "が",
-    "name": "ga"
-},{
-    "symbol": "ぎ",
-    "name": "gi"
-},{
-    "symbol": "ぐ",
-    "name": "gu"
-},{
-    "symbol": "げ",
-    "name": "ge"
-},{
-    "symbol": "ご",
-    "name": "go"
-},{
     "symbol": "さ",
     "name": "sa"
 },{
@@ -59,21 +44,6 @@
     "symbol": "そ",
     "name": "so"
 },{
-    "symbol": "ざ",
-    "name": "za"
-},{
-    "symbol": "じ",
-    "name": "zi"
-},{
-    "symbol": "ず",
-    "name": "zu"
-},{
-    "symbol": "ぜ",
-    "name": "ze"
-},{
-    "symbol": "ぞ",
-    "name": "zo"
-},{
     "symbol": "た",
     "name": "ta"
 },{
@@ -88,21 +58,6 @@
 },{
     "symbol": "と",
     "name": "to"
-},{
-    "symbol": "だ",
-    "name": "da"
-},{
-    "symbol": "ぢ",
-    "name": "di"
-},{
-    "symbol": "づ",
-    "name": "du"
-},{
-    "symbol": "で",
-    "name": "de"
-},{
-    "symbol": "ど",
-    "name": "do"
 },{
     "symbol": "な",
     "name": "na"
@@ -133,36 +88,6 @@
 },{
     "symbol": "ほ",
     "name": "ho"
-},{
-    "symbol": "ば",
-    "name": "ba"
-},{
-    "symbol": "び",
-    "name": "bi"
-},{
-    "symbol": "ぶ",
-    "name": "bu"
-},{
-    "symbol": "べ",
-    "name": "be"
-},{
-    "symbol": "ぼ",
-    "name": "bo"
-},{
-    "symbol": "ぱ",
-    "name": "pa"
-},{
-    "symbol": "ぴ",
-    "name": "pi"
-},{
-    "symbol": "ぷ",
-    "name": "pu"
-},{
-    "symbol": "ぺ",
-    "name": "pe"
-},{
-    "symbol": "ぽ",
-    "name": "po"
 },{
     "symbol": "ま",
     "name": "ma"

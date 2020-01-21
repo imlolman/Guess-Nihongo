@@ -1,0 +1,15 @@
+[
+    {
+      "name": "Harigana Charts",
+      "options": [
+        {
+          "name": "Chart 1 (Without Dakuten)",
+          "file": "words/harigana1.json"
+        },
+        {
+          "name": "Chart 2 (With Dakuten)",
+          "file": "words/harigana2.json"
+        }
+      ]
+    }
+  ]

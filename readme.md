@@ -11,9 +11,9 @@ Live at: https://imlolman.github.io/Guess-Nihongo/
     "name": "Ohayou gozaimasu",
     "meaning": "Good Morning"
 },{
-    "symbol": "こんばんは",
-    "name": "Konban wa",
-    "meaning": "Good Evening"
+    "symbol": "",
+    "name": "",
+    "meaning": ""
 }]
 ```
 - Add file to words folder

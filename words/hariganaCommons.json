@@ -1,0 +1,47 @@
+[
+    {
+        "symbol": "しも ません",
+        "name": "Shimomasen",
+        "meaning": "I don't know"
+    },{
+        "symbol": "あなた わ",
+        "name": "Watashi wa",
+        "meaning": "I am"
+    },{
+        "symbol": "あなた わ",
+        "name": "Anata wa",
+        "meaning": "You are"
+    },{
+        "symbol": "はい",
+        "name": "Hai",
+        "meaning": "Yes"
+    },{
+        "symbol": "いいえ",
+        "name": "iie",
+        "meaning": "No"
+    },{
+        "symbol": "もいちど",
+        "name": "Moichido",
+        "meaning": "Please Repeat"
+    },{
+        "symbol": "あさ",
+        "name": "Asa",
+        "meaning": "Morning"
+    },{
+        "symbol": "うち",
+        "name": "Uchi",
+        "meaning": "House"
+    },{
+        "symbol": "いす",
+        "name": "isu",
+        "meaning": "Chair"
+    },{
+        "symbol": "えき",
+        "name": "eki",
+        "meaning": "Station"
+    },{
+        "symbol": "くすり",
+        "name": "kusuri",
+        "meaning": "Tablet (medicine)"
+    }
+]

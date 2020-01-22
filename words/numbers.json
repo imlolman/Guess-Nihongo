@@ -1,0 +1,500 @@
+[{
+    "name": "ichi",
+    "symbol": "いち",
+    "meaning": "1"
+},
+{
+    "name": "ni",
+    "symbol": "に",
+    "meaning": "2"
+},
+{
+    "name": "san",
+    "symbol": "さん",
+    "meaning": "3"
+},
+{
+    "name": "yon, shi",
+    "symbol": "よん、し",
+    "meaning": "4"
+},
+{
+    "name": "go",
+    "symbol": "ご",
+    "meaning": "5"
+},
+{
+    "name": "roku",
+    "symbol": "ろく",
+    "meaning": "6"
+},
+{
+    "name": "nana, shichi",
+    "symbol": "なな、しち",
+    "meaning": "7"
+},
+{
+    "name": "hachi",
+    "symbol": "はち",
+    "meaning": "8"
+},
+{
+    "name": "ku, kyuu",
+    "symbol": "く、きゅう",
+    "meaning": "9"
+},
+{
+    "name": "juu",
+    "symbol": "じゅう",
+    "meaning": "10"
+},
+{
+    "name": "juuichi",
+    "symbol": "じゅういち",
+    "meaning": "11"
+},
+{
+    "name": "juuni",
+    "symbol": "じゅうに",
+    "meaning": "12"
+},
+{
+    "name": "juusan",
+    "symbol": "じゅうさん",
+    "meaning": "13"
+},
+{
+    "name": "juuyon",
+    "symbol": "じゅうよん",
+    "meaning": "14"
+},
+{
+    "name": "juugo",
+    "symbol": "じゅうご",
+    "meaning": "15"
+},
+{
+    "name": "juuroku",
+    "symbol": "じゅうろく",
+    "meaning": "16"
+},
+{
+    "name": "juunana",
+    "symbol": "じゅうなな",
+    "meaning": "17"
+},
+{
+    "name": "juuhachi",
+    "symbol": "じゅうはち",
+    "meaning": "18"
+},
+{
+    "name": "juukyuu",
+    "symbol": "じゅうきゅう",
+    "meaning": "19"
+},
+{
+    "name": "nijuu)",
+    "symbol": "にじゅう",
+    "meaning": "20"
+},
+{
+    "name": "nijuuichi",
+    "symbol": "にじゅういち",
+    "meaning": "21"
+},
+{
+    "name": "nijuuni",
+    "symbol": "にじゅうに",
+    "meaning": "22"
+},
+{
+    "name": "nijuusan",
+    "symbol": "にじゅうさん",
+    "meaning": "23"
+},
+{
+    "name": "nijuuyon",
+    "symbol": "にじゅうよん",
+    "meaning": "24"
+},
+{
+    "name": "nijuugo",
+    "symbol": "にじゅうご",
+    "meaning": "25"
+},
+{
+    "name": "nijuuroku",
+    "symbol": "にじゅうろく",
+    "meaning": "26"
+},
+{
+    "name": "nijuunana",
+    "symbol": "にじゅうなな",
+    "meaning": "27"
+},
+{
+    "name": "nijuuhachi",
+    "symbol": "にじゅうはち",
+    "meaning": "28"
+},
+{
+    "name": "nijuukyuu",
+    "symbol": "にじゅうきゅう",
+    "meaning": "29"
+},
+{
+    "name": "sanjuu",
+    "symbol": "さんじゅう",
+    "meaning": "30"
+},
+{
+    "name": "sanjuuichi",
+    "symbol": "さんじゅういち",
+    "meaning": "31"
+},
+{
+    "name": "sanjuuni",
+    "symbol": "さんじゅうに",
+    "meaning": "32"
+},
+{
+    "name": "sanjuusan",
+    "symbol": "さんじゅうさん",
+    "meaning": "33"
+},
+{
+    "name": "sanjuuyon",
+    "symbol": "さんじゅうよん",
+    "meaning": "34"
+},
+{
+    "name": "sanjuugo",
+    "symbol": "さんじゅうご",
+    "meaning": "35"
+},
+{
+    "name": "sanjuuroku",
+    "symbol": "さんじゅうろく",
+    "meaning": "36"
+},
+{
+    "name": "sanjuunana",
+    "symbol": "さんじゅうなな",
+    "meaning": "37"
+},
+{
+    "name": "sanjuuhachi",
+    "symbol": "さんじゅうはち",
+    "meaning": "38"
+},
+{
+    "name": "sanjuukyuu",
+    "symbol": "さんじゅうきゅう",
+    "meaning": "39"
+},
+{
+    "name": "yonjuu",
+    "symbol": "よんじゅう",
+    "meaning": "40"
+},
+{
+    "name": "yonjuuichi",
+    "symbol": "よんじゅういち",
+    "meaning": "41"
+},
+{
+    "name": "yonjuuni",
+    "symbol": "よんじゅうに",
+    "meaning": "42"
+},
+{
+    "name": "yonjuusan",
+    "symbol": "よんじゅうさん",
+    "meaning": "43"
+},
+{
+    "name": "yonjuuyon",
+    "symbol": "よんじゅうよん",
+    "meaning": "44"
+},
+{
+    "name": "yonjuugo",
+    "symbol": "よんじゅうご",
+    "meaning": "45"
+},
+{
+    "name": "yonjuuroku",
+    "symbol": "よんじゅうろく",
+    "meaning": "46"
+},
+{
+    "name": "yonjuunana",
+    "symbol": "よんじゅうなな",
+    "meaning": "47"
+},
+{
+    "name": "yonjuuhachi",
+    "symbol": "よんじゅうはち",
+    "meaning": "48"
+},
+{
+    "name": "yonjuukyuu",
+    "symbol": "よんじゅうきゅう",
+    "meaning": "49"
+},
+{
+    "name": "gojuu",
+    "symbol": "ごじゅう",
+    "meaning": "50"
+},
+{
+    "name": "gojuuichi",
+    "symbol": "ごじゅういち",
+    "meaning": "51"
+},
+{
+    "name": "gojuuni",
+    "symbol": "ごじゅうに",
+    "meaning": "52"
+},
+{
+    "name": "gojuusan",
+    "symbol": "ごじゅうさん",
+    "meaning": "53"
+},
+{
+    "name": "gojuuyon",
+    "symbol": "ごじゅうよん",
+    "meaning": "54"
+},
+{
+    "name": "gojuugo",
+    "symbol": "ごじゅうご",
+    "meaning": "55"
+},
+{
+    "name": "gojuuroku",
+    "symbol": "ごじゅうろく",
+    "meaning": "56"
+},
+{
+    "name": "gojuunana",
+    "symbol": "ごじゅうなな",
+    "meaning": "57"
+},
+{
+    "name": "gojuuhachi",
+    "symbol": "ごじゅうはち",
+    "meaning": "58"
+},
+{
+    "name": "gojuukyuu",
+    "symbol": "ごじゅうきゅう",
+    "meaning": "59"
+},
+{
+    "name": "rokujuu",
+    "symbol": "ろくじゅう",
+    "meaning": "60"
+},
+{
+    "name": "rokujuuichi",
+    "symbol": "ろくじゅういち",
+    "meaning": "61"
+},
+{
+    "name": "rokujuuni",
+    "symbol": "ろくじゅうに",
+    "meaning": "62"
+},
+{
+    "name": "rokujuusan",
+    "symbol": "ろくじゅうさん",
+    "meaning": "63"
+},
+{
+    "name": "rokujuuyon",
+    "symbol": "ろくじゅうよん",
+    "meaning": "64"
+},
+{
+    "name": "rokujuugo",
+    "symbol": "ろくじゅうご",
+    "meaning": "65"
+},
+{
+    "name": "rokujuuroku",
+    "symbol": "ろくじゅうろく",
+    "meaning": "66"
+},
+{
+    "name": "rokujuunana",
+    "symbol": "ろくじゅうなな",
+    "meaning": "67"
+},
+{
+    "name": "rokujuuhachi",
+    "symbol": "ろくじゅうはち",
+    "meaning": "68"
+},
+{
+    "name": "rokujuukyuu",
+    "symbol": "ろくじゅうきゅう",
+    "meaning": "69"
+},
+{
+    "name": "nanajuu",
+    "symbol": "ななじゅう",
+    "meaning": "70"
+},
+{
+    "name": "nanajuuichi",
+    "symbol": "ななじゅういち",
+    "meaning": "71"
+},
+{
+    "name": "nanajuuni",
+    "symbol": "ななじゅうに",
+    "meaning": "72"
+},
+{
+    "name": "nanajuusan",
+    "symbol": "ななじゅうさん",
+    "meaning": "73"
+},
+{
+    "name": "nanajuuyon",
+    "symbol": "ななじゅうよん",
+    "meaning": "74"
+},
+{
+    "name": "nanajuugo",
+    "symbol": "ななじゅうご",
+    "meaning": "75"
+},
+{
+    "name": "nanajuuroku",
+    "symbol": "ななじゅうろく",
+    "meaning": "76"
+},
+{
+    "name": "nanajuunana",
+    "symbol": "ななじゅうなな",
+    "meaning": "77"
+},
+{
+    "name": "nanajuuhachi",
+    "symbol": "ななじゅうはち",
+    "meaning": "78"
+},
+{
+    "name": "nanajuukyuu",
+    "symbol": "ななじゅうきゅう",
+    "meaning": "79"
+},
+{
+    "name": "hachijuu",
+    "symbol": "はちじゅう",
+    "meaning": "80"
+},
+{
+    "name": "hachijuuichi",
+    "symbol": "はちじゅういち",
+    "meaning": "81"
+},
+{
+    "name": "hachijuuni",
+    "symbol": "はちじゅうに",
+    "meaning": "82"
+},
+{
+    "name": "hachijuusan",
+    "symbol": "はちじゅうさん",
+    "meaning": "83"
+},
+{
+    "name": "hachijuuyon",
+    "symbol": "はちじゅうよん",
+    "meaning": "84"
+},
+{
+    "name": "hachijuugo",
+    "symbol": "はちじゅうご",
+    "meaning": "85"
+},
+{
+    "name": "hachijuuroku",
+    "symbol": "はちじゅうろく",
+    "meaning": "86"
+},
+{
+    "name": "hachijuunana",
+    "symbol": "はちじゅうなな",
+    "meaning": "87"
+},
+{
+    "name": "hachijuuhachi",
+    "symbol": "はちじゅうはち",
+    "meaning": "88"
+},
+{
+    "name": "hachijuukyuu",
+    "symbol": "はちじゅうきゅう",
+    "meaning": "89"
+},
+{
+    "name": "kyuujuu",
+    "symbol": "きゅうじゅう",
+    "meaning": "90"
+},
+{
+    "name": "kyuujuuichi",
+    "symbol": "きゅうじゅういち",
+    "meaning": "91"
+},
+{
+    "name": "kyuujuuni",
+    "symbol": "きゅうじゅうに",
+    "meaning": "92"
+},
+{
+    "name": "kyuujuusan",
+    "symbol": "きゅうじゅうさん",
+    "meaning": "93"
+},
+{
+    "name": "kyuujuuyon",
+    "symbol": "きゅうじゅうよん",
+    "meaning": "94"
+},
+{
+    "name": "kyuujuugo",
+    "symbol": "きゅうじゅうご",
+    "meaning": "95"
+},
+{
+    "name": "kyuujuuroku",
+    "symbol": "きゅうじゅうろく",
+    "meaning": "96"
+},
+{
+    "name": "kyuujuunana",
+    "symbol": "きゅうじゅうなな",
+    "meaning": "97"
+},
+{
+    "name": "kyuujuuhachi",
+    "symbol": "きゅうじゅうはち",
+    "meaning": "98"
+},
+{
+    "name": "kyuujuukyuu",
+    "symbol": "きゅうじゅうきゅう",
+    "meaning": "99"
+},
+{
+    "name": "hyaku",
+    "symbol": "ひゃく",
+    "meaning": "100"
+}]

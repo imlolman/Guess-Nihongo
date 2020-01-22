@@ -52,6 +52,7 @@ h1, h2 {
   margin-right: auto;
   display: table;
   text-align: center;
+  padding: 25px;
 }
 
 .gameBox .dataOuter .dataInner .symbolText {

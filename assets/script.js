@@ -7,7 +7,9 @@ obkp = 0
 
 displayItem = function () {
     var rand = totalWords[Math.floor(Math.random() * totalWords.length)];
-    $('.symbolText').css('font-size', 150/Math.pow((rand.symbol.length),0.7).toString() + 'px')
+    fs = 150/Math.pow((rand.symbol.length),0.7)
+    fs = (fs < 25)? '25': fs.toString()
+    $('.symbolText').css('font-size', fs + 'px')
     $('.symbolText').html(rand.symbol)
     $('#desc').html('')
     $('#mean').html('')
@@ -38,7 +40,6 @@ function playTimeout(time, callback) {
             if(skip == true){
                 if(callback.name == "displayItem"){
                     if(leftSkip){
-                        skip = false
                         offset = 544
                     }
                 }else{
@@ -47,6 +48,9 @@ function playTimeout(time, callback) {
                 }
             }
             if (offset >= 544) {
+                if(callback.name == "displayItem"){
+                    skip = false
+                }
                 callback()
                 clearInterval(timer);
             }
@@ -76,8 +80,9 @@ showOptions = function (data) {
             <div class="px-4">`
         section.options.forEach(option => {
             toReturn += `<div class="custom-control custom-checkbox checkbox-success">
-                <input type="checkbox" class="custom-control-input form-control option" id="${option.name}" loc="${option.file}">
-                <label class="custom-control-label sub" for="${option.name}">${option.name}</label>
+                <input type="checkbox" class="custom-control-input form-control option" id="${section.name} ${option.name}" loc="${option.file}">
+                <label class="custom-control-label sub" for="${section.name} ${option.name}">${option.name}</label>
+                <button class="btn btn-sm btn-default text-light py-0" onclick="showWords('${option.file}','${option.name}')"><i class="fas fa-external-link-alt"></i></button>
             </div>`
         })
         toReturn += `
@@ -115,11 +120,25 @@ loadPractice = function (url = null) {
             })
         }
     })
-    if(!present){
+    if(!present && (url == null)){
         alert('Please Select atleast One Option')
         return
     }
     $('.menu').hide()
     $('.practice').fadeIn()
     $('.gameBox').height($('.gameBox').width())
+}
+
+function showWords(link,name){
+    fetch(link).then(response => response.json()).then(data => {
+        toReturn = `<table class="table table-striped table-bordered"><thead><tr><th>Symbol</th><th>Translation</th><th>Meaning</th></tr></thead><tbody>`
+        for(s in data){
+            toReturn += `<tr><td>${data[s].symbol}</td><td>${data[s].name}</td><td>${data[s].meaning}</td></tr>`
+        }
+
+        toReturn += `</tbody></table>`
+        $('#showWordsModal').find('.modal-body').html(toReturn)
+    })
+    $('#showWordsModal').find('#modalTitle').html(name)
+    $('#showWordsModal').modal('show')
 }

@@ -23,15 +23,15 @@
                 <h1 onclick="window.location = window.location.href">Guess Nihongo 🎉</h1>
                 <div class="menu">
                     <h2 class="mt-5">Select Options to Revise</h2>
-                    <div class="mt-5" id="showOptions">
-
-                    </div>
+                    <div class="mt-5" id="showOptions"></div>
                     <div class="buttons row text-center mt-5">
                         <div class="col-6">
-                            <button class="btn btn-lg w-100 btn-secondary" onclick="alert('This Feature will be Available Soon. Developer is Working Very Hard.')">Load Game</button>
+                            <button class="btn btn-lg w-100 btn-secondary"
+                                onclick="alert('This Feature will be Available Soon. Developer is Working Very Hard.')">Load
+                                Game</button>
                         </div>
                         <div class="col-6">
-                            <button class="btn btn-lg w-100 btn-success" onclick="loadPractice()">Load Practice</button>
+                            <button class="btn btn-lg w-100 btn-primary" onclick="loadPractice()">Load Practice</button>
                         </div>
                     </div>
                 </div>
@@ -71,24 +71,49 @@
                     <div class="actions">
                         <table cellpadding=5>
                             <tr>
-                                <td><button class="btn btn-secondary w-100 btn-lg text-left"  onclick="alert('This Feature will be Available Soon. Developer is Working Very Hard.')">Speak <i
-                                            class="fas fa-volume-up"></i></button></td>
-                                <td><button class="btn btn-success w-100 btn-lg text-left" onmousedown='skip=true;leftSkip=false'
-                                    onmouseup='leftSkip=true' ontouchstart='skip=true;leftSkip=false' ontouchend='leftSkip=true'>Skip <i
-                                            class="fas fa-forward"></i></button></td>
+                                <td><button class="btn btn-secondary w-100 btn-lg text-left"
+                                        onclick="alert('This Feature will be Available Soon. Developer is Working Very Hard.')">Speak
+                                        <i class="fas fa-volume-up"></i></button>
+                                </td>
+                                <td><button class="btn btn-primary w-100 btn-lg text-left"
+                                        onmousedown='skip=true;leftSkip=false' onmouseup='leftSkip=true'
+                                        ontouchstart='skip=true;leftSkip=false' ontouchend='leftSkip=true'>Skip <i
+                                            class="fas fa-forward"></i></button>
+                                </td>
                                 <td><button class="btn btn-warning w-100 btn-lg text-left" onmousedown='run=false'
                                         onmouseup='run=true' ontouchstart='run=false' ontouchend='run=true'>Hold <i
-                                            class="far fa-pause-circle"></i></button></td>
+                                            class="far fa-pause-circle"></i></button>
+                                </td>
                             </tr>
                         </table>
                     </div>
                     <div class="h3 text-center m-3" id="mean">
-                        Please Wait While we are Loading
+                        Please Wait While we are Loading...
                     </div>
+                </div>
+                <div class="py-5">
+
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="modal fade text-dark" id="showWordsModal" tabindex="-1" role="dialog" aria-labelledby="showWordsModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Please Wait While we are Loading...
+            </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -110,7 +135,7 @@
 
     <script>
         // TEMPORARY //
-        // loadPractice("words/harigana1.json")
+        // loadPractice("temp.json")
     </script>
 
 </body>

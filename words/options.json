@@ -21,6 +21,26 @@
         {
           "name": "WeekDays",
           "file": "words/hariganaWeekdays.json"
+        },
+        {
+          "name": "Numbers",
+          "file": "words/numbers.json"
+        },
+        {
+          "name": "Common Words",
+          "file": "words/hariganaCommons.json"
+        }
+      ]
+    },{
+      "name": "Katakana Charts",
+      "options": [
+        {
+          "name": "Chart 1 (Without Dakuten)",
+          "file": "words/katakana1.json"
+        },
+        {
+          "name": "Chart 2 (With Dakuten)",
+          "file": "words/katakana2.json"
         }
       ]
     }

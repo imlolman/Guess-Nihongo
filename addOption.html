@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Fugaz+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.0/css/pro.min.css">
+    <title>Guess Nihongo</title>
+</head>
+
+<body>
+    <div class="container px-lg-5">
+        <div class="row">
+            <div class="outerBox col-12 pt-3 px-lg-5">
+                <h1 onclick="window.location = window.location.href">Guess Nihongo 🎉</h1>
+                <div class="row mt-4">
+                    <form class="col-12 text-light">
+                        <h2>Add Option</h2>
+                        <div class="form-group">
+                            <label>Select Section</label>
+                            <select class="form-control" id="allSectionSelect">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                          <label>Option Name</label>
+                          <input type="text" class="form-control" id="newOptionName" placeholder="Enter Option Name">
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <button type="reset" class="btn btn-secondary w-100">Reset</button>
+                            </div>
+                            <div class="col-6">
+                                <button type="button" onclick="addOption()" class="btn btn-primary w-100">Submit</button>
+                            </div>
+                        </div>
+                      </form>
+                      <form class="col-12 text-light mt-5">
+                        <h2>Add Section</h2>
+                        <div class="form-group">
+                          <label>Section Name</label>
+                          <input type="text" class="form-control" id="newSectionName" placeholder="Enter Option Name">
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <button type="reset" class="btn btn-secondary w-100">Reset</button>
+                            </div>
+                            <div class="col-6">
+                                <button type="button" onclick="addSection()" class="btn btn-primary w-100">Submit</button>
+                            </div>
+                        </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade text-dark" id="showWordsModal" tabindex="-1" role="dialog" aria-labelledby="showWordsModal"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Please Wait While we are Loading...
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDXWPipx1POp_YwzwaBv1oeflERe6BEfXE",
+            authDomain: "guess-nihongo.firebaseapp.com",
+            databaseURL: "https://guess-nihongo.firebaseio.com",
+            projectId: "guess-nihongo",
+            storageBucket: "guess-nihongo.appspot.com",
+            messagingSenderId: "268662837106",
+            appId: "1:268662837106:web:30cbff376badb5dd9cd7eb",
+            measurementId: "G-J9HR9DM4YR"
+        };
+        // Initialize Firebase
+        var fb = firebase.initializeApp(firebaseConfig);
+        db = firebase.firestore()
+        firebase.analytics();
+    </script>
+
+    <script>
+        myData = []
+        db.collection("Words")
+            .orderBy("addTime","desc")
+            .get()
+            .then(function (querySnapshot) {
+                querySnapshot.forEach(function (doc) {
+                    $("#allSectionSelect").append(`<option value="${doc.id}">${doc.data().name}</option>`)
+                });
+                loadOptions()
+            })
+            .catch(function (error) {
+                console.log("Error getting documents: ", error);
+            });
+    </script>
+    <script src="assets/script.js"></script>
+
+    <script>
+        // TEMPORARY //
+        // loadPractice("temp.json")
+    </script>
+
+</body>
+
+</html>

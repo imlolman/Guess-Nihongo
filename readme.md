@@ -18,3 +18,10 @@ Live at: https://imlolman.github.io/Guess-Nihongo/
 ```
 - Add file to words folder
 - Add an Entry to `words/options.json`
+
+## **Features Upcoming**
+- [x] Data Come From Firestore
+- [x] Data Adding Page
+- [ ] Card Animation
+- [ ] Sensai Login
+- [ ] Data Verification/Add

@@ -96,4 +96,8 @@ h1, h2 {
   right: 0;
   padding: 10px;
 }
+
+.overflow {
+  overflow: auto;
+}
 /*# sourceMappingURL=main.css.map */

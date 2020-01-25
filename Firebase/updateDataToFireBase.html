@@ -1,0 +1,1313 @@
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+
+<script>
+// Your web app's Firebase configuration
+var firebaseConfig = {
+    apiKey: "AIzaSyDXWPipx1POp_YwzwaBv1oeflERe6BEfXE",
+    authDomain: "guess-nihongo.firebaseapp.com",
+    databaseURL: "https://guess-nihongo.firebaseio.com",
+    projectId: "guess-nihongo",
+    storageBucket: "guess-nihongo.appspot.com",
+    messagingSenderId: "268662837106",
+    appId: "1:268662837106:web:30cbff376badb5dd9cd7eb",
+    measurementId: "G-J9HR9DM4YR"
+};
+</script>
+
+
+<script>
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+
+    data = {
+        "Words": [
+            {
+                "name": "Harigana Charts",
+                "options": [
+                  {
+                    "name": "Chart 1 (Without Dakuten)",
+                    "words": [{
+                        "symbol": "あ",
+                        "name": "a",
+                        "meaning": ""
+                    },{
+                        "symbol": "い",
+                        "name": "i",
+                        "meaning": ""
+                    },{
+                        "symbol": "う",
+                        "name": "u",
+                        "meaning": ""
+                    },{
+                        "symbol": "え",
+                        "name": "e",
+                        "meaning": ""
+                    },{
+                        "symbol": "お",
+                        "name": "o",
+                        "meaning": ""
+                    },{
+                        "symbol": "か",
+                        "name": "ka",
+                        "meaning": ""
+                    },{
+                        "symbol": "き",
+                        "name": "ki",
+                        "meaning": ""
+                    },{
+                        "symbol": "く",
+                        "name": "ku",
+                        "meaning": ""
+                    },{
+                        "symbol": "け",
+                        "name": "ke",
+                        "meaning": ""
+                    },{
+                        "symbol": "こ",
+                        "name": "ko",
+                        "meaning": ""
+                    },{
+                        "symbol": "さ",
+                        "name": "sa",
+                        "meaning": ""
+                    },{
+                        "symbol": "し",
+                        "name": "shi",
+                        "meaning": ""
+                    },{
+                        "symbol": "す",
+                        "name": "su",
+                        "meaning": ""
+                    },{
+                        "symbol": "せ",
+                        "name": "se",
+                        "meaning": ""
+                    },{
+                        "symbol": "そ",
+                        "name": "so",
+                        "meaning": ""
+                    },{
+                        "symbol": "た",
+                        "name": "ta",
+                        "meaning": ""
+                    },{
+                        "symbol": "ち",
+                        "name": "chi",
+                        "meaning": ""
+                    },{
+                        "symbol": "つ",
+                        "name": "tsu",
+                        "meaning": ""
+                    },{
+                        "symbol": "て",
+                        "name": "te",
+                        "meaning": ""
+                    },{
+                        "symbol": "と",
+                        "name": "to",
+                        "meaning": ""
+                    },{
+                        "symbol": "な",
+                        "name": "na",
+                        "meaning": ""
+                    },{
+                        "symbol": "に",
+                        "name": "ni",
+                        "meaning": ""
+                    },{
+                        "symbol": "ぬ",
+                        "name": "nu",
+                        "meaning": ""
+                    },{
+                        "symbol": "ね",
+                        "name": "ne",
+                        "meaning": ""
+                    },{
+                        "symbol": "の",
+                        "name": "no",
+                        "meaning": ""
+                    },{
+                        "symbol": "は",
+                        "name": "ha",
+                        "meaning": ""
+                    },{
+                        "symbol": "ひ",
+                        "name": "hi",
+                        "meaning": ""
+                    },{
+                        "symbol": "ふ",
+                        "name": "fu",
+                        "meaning": ""
+                    },{
+                        "symbol": "へ",
+                        "name": "he",
+                        "meaning": ""
+                    },{
+                        "symbol": "ほ",
+                        "name": "ho",
+                        "meaning": ""
+                    },{
+                        "symbol": "ま",
+                        "name": "ma",
+                        "meaning": ""
+                    },{
+                        "symbol": "み",
+                        "name": "mi",
+                        "meaning": ""
+                    },{
+                        "symbol": "む",
+                        "name": "mu",
+                        "meaning": ""
+                    },{
+                        "symbol": "め",
+                        "name": "me",
+                        "meaning": ""
+                    },{
+                        "symbol": "も",
+                        "name": "mo",
+                        "meaning": ""
+                    },{
+                        "symbol": "や",
+                        "name": "ya",
+                        "meaning": ""
+                    },{
+                        "symbol": "ゆ",
+                        "name": "yu",
+                        "meaning": ""
+                    },{
+                        "symbol": "よ",
+                        "name": "yo",
+                        "meaning": ""
+                    },{
+                        "symbol": "ら",
+                        "name": "ra",
+                        "meaning": ""
+                    },{
+                        "symbol": "り",
+                        "name": "ri",
+                        "meaning": ""
+                    },{
+                        "symbol": "る",
+                        "name": "ru",
+                        "meaning": ""
+                    },{
+                        "symbol": "れ",
+                        "name": "re",
+                        "meaning": ""
+                    },{
+                        "symbol": "ろ",
+                        "name": "ro",
+                        "meaning": ""
+                    },{
+                        "symbol": "わ",
+                        "name": "wa",
+                        "meaning": ""
+                    },{
+                        "symbol": "を",
+                        "name": "o",
+                        "meaning": ""
+                    },{
+                        "symbol": "ん",
+                        "name": "n",
+                        "meaning": ""
+                    }]
+                  },
+                  {
+                    "name": "Chart 2 (With Dakuten)",
+                    "words": [{
+                        "symbol": "が",
+                        "name": "ga",
+                        "meaning": ""
+                    },{
+                        "symbol": "ぎ",
+                        "name": "gi",
+                        "meaning": ""
+                    },{
+                        "symbol": "ぐ",
+                        "name": "gu",
+                        "meaning": ""
+                    },{
+                        "symbol": "げ",
+                        "name": "ge",
+                        "meaning": ""
+                    },{
+                        "symbol": "ご",
+                        "name": "go",
+                        "meaning": ""
+                    },{
+                        "symbol": "ざ",
+                        "name": "za",
+                        "meaning": ""
+                    },{
+                        "symbol": "じ",
+                        "name": "zi",
+                        "meaning": ""
+                    },{
+                        "symbol": "ず",
+                        "name": "zu",
+                        "meaning": ""
+                    },{
+                        "symbol": "ぜ",
+                        "name": "ze",
+                        "meaning": ""
+                    },{
+                        "symbol": "ぞ",
+                        "name": "zo",
+                        "meaning": ""
+                    },{
+                        "symbol": "だ",
+                        "name": "da",
+                        "meaning": ""
+                    },{
+                        "symbol": "ぢ",
+                        "name": "di",
+                        "meaning": ""
+                    },{
+                        "symbol": "づ",
+                        "name": "du",
+                        "meaning": ""
+                    },{
+                        "symbol": "で",
+                        "name": "de",
+                        "meaning": ""
+                    },{
+                        "symbol": "ど",
+                        "name": "do",
+                        "meaning": ""
+                    },{
+                        "symbol": "ば",
+                        "name": "ba",
+                        "meaning": ""
+                    },{
+                        "symbol": "び",
+                        "name": "bi",
+                        "meaning": ""
+                    },{
+                        "symbol": "ぶ",
+                        "name": "bu",
+                        "meaning": ""
+                    },{
+                        "symbol": "べ",
+                        "name": "be",
+                        "meaning": ""
+                    },{
+                        "symbol": "ぼ",
+                        "name": "bo",
+                        "meaning": ""
+                    },{
+                        "symbol": "ぱ",
+                        "name": "pa",
+                        "meaning": ""
+                    },{
+                        "symbol": "ぴ",
+                        "name": "pi",
+                        "meaning": ""
+                    },{
+                        "symbol": "ぷ",
+                        "name": "pu",
+                        "meaning": ""
+                    },{
+                        "symbol": "ぺ",
+                        "name": "pe",
+                        "meaning": ""
+                    },{
+                        "symbol": "ぽ",
+                        "name": "po",
+                        "meaning": ""
+                    }]
+                  }
+                ]
+              },{
+                "name": "Harigana Words",
+                "options": [
+                  {
+                    "name": "Greetings",
+                    "words": [{
+                        "symbol": "おはようございます",
+                        "name": "Ohayou gozaimasu",
+                        "meaning": "Good Morning"
+                    }, {
+                        "symbol": "はじめまして",
+                        "name": "Hajimemashite",
+                        "meaning": "Greet while Meeting for the First time"
+                    }, {
+                        "symbol": "こんにちは",
+                        "name": "Konnichi wa",
+                        "meaning": "Hello/Good day/Good Afternoon"
+                    }, {
+                        "symbol": "こんばんは",
+                        "name": "Konban wa",
+                        "meaning": "Good Evening"
+                    }, {
+                        "symbol": "もしもし",
+                        "name": "Moshi-Moshi",
+                        "meaning": "Telephonic Hello"
+                    }, {
+                        "symbol": "じゃまた",
+                        "name": "Ja mata",
+                        "meaning": "See you later"
+                    }, {
+                        "symbol": "どうもありがとうございました",
+                        "name": "Dōmo arigatōgozaimashita",
+                        "meaning": "Thank You Very Much"
+                    }, {
+                        "symbol": "ありがと",
+                        "name": "Arigato",
+                        "meaning": "Thank you"
+                    }, {
+                        "symbol": "ようこそ",
+                        "name": "Yōkoso",
+                        "meaning": "Welcome"
+                    }, {
+                        "symbol": "おやすみなさい",
+                        "name": "Oyasumi nasai",
+                        "meaning": "Good Night"
+                    }, {
+                        "symbol": "おつかれ さま です",
+                        "name": "O tsukare-samadesu",
+                        "meaning": "Good Work"
+                    }, {
+                        "symbol": "げんき です",
+                        "name": "Genkidesu",
+                        "meaning": "I am Fine"
+                    }, {
+                        "symbol": "どぞ、 よろしく おねがい します",
+                        "name": "Do zo, yoroshiku onegai shimasu",
+                        "meaning": "Please Take Care of me.(Ending of Introduction)"
+                    }, {
+                        "symbol": "ごめな さい",
+                        "name": "Go mena sai",
+                        "meaning": "I am Sorry"
+                    }, {
+                        "symbol": "し めな さい",
+                        "name": "Shi mena sai",
+                        "meaning": "Excuse me/Sorry"
+                    }]
+                  },
+                  {
+                    "name": "WeekDays",
+                    "words": [{
+                        "symbol": "にちようび",
+                        "name": "Nichiyōbi",
+                        "meaning": "Sunday"
+                    },{
+                        "symbol": "げつようび",
+                        "name": "Getsuyōbi",
+                        "meaning": "Monday"
+                    },{
+                        "symbol": "かようび",
+                        "name": "Kayōbi",
+                        "meaning": "Tuesday"
+                    },{
+                        "symbol": "すいようび",
+                        "name": "Suiyōbi",
+                        "meaning": "Wednesday"
+                    },{
+                        "symbol": "もくようび",
+                        "name": "Mokuyōbi",
+                        "meaning": "Thursday"
+                    },{
+                        "symbol": "きんようび",
+                        "name": "Kinyōbi",
+                        "meaning": "Friday"
+                    },{
+                        "symbol": "どようび",
+                        "name": "Doyōbi",
+                        "meaning": "Saturday"
+                    }]
+                  },
+                  {
+                    "name": "Numbers",
+                    "words": [{
+                        "name": "ichi",
+                        "symbol": "いち",
+                        "meaning": "1"
+                    },
+                    {
+                        "name": "ni",
+                        "symbol": "に",
+                        "meaning": "2"
+                    },
+                    {
+                        "name": "san",
+                        "symbol": "さん",
+                        "meaning": "3"
+                    },
+                    {
+                        "name": "yon, shi",
+                        "symbol": "よん、し",
+                        "meaning": "4"
+                    },
+                    {
+                        "name": "go",
+                        "symbol": "ご",
+                        "meaning": "5"
+                    },
+                    {
+                        "name": "roku",
+                        "symbol": "ろく",
+                        "meaning": "6"
+                    },
+                    {
+                        "name": "nana, shichi",
+                        "symbol": "なな、しち",
+                        "meaning": "7"
+                    },
+                    {
+                        "name": "hachi",
+                        "symbol": "はち",
+                        "meaning": "8"
+                    },
+                    {
+                        "name": "kyuu, ku",
+                        "symbol": "きゅう、く",
+                        "meaning": "9"
+                    },
+                    {
+                        "name": "juu",
+                        "symbol": "じゅう",
+                        "meaning": "10"
+                    },
+                    {
+                        "name": "juuichi",
+                        "symbol": "じゅういち",
+                        "meaning": "11"
+                    },
+                    {
+                        "name": "juuni",
+                        "symbol": "じゅうに",
+                        "meaning": "12"
+                    },
+                    {
+                        "name": "juusan",
+                        "symbol": "じゅうさん",
+                        "meaning": "13"
+                    },
+                    {
+                        "name": "juuyon",
+                        "symbol": "じゅうよん",
+                        "meaning": "14"
+                    },
+                    {
+                        "name": "juugo",
+                        "symbol": "じゅうご",
+                        "meaning": "15"
+                    },
+                    {
+                        "name": "juuroku",
+                        "symbol": "じゅうろく",
+                        "meaning": "16"
+                    },
+                    {
+                        "name": "juunana",
+                        "symbol": "じゅうなな",
+                        "meaning": "17"
+                    },
+                    {
+                        "name": "juuhachi",
+                        "symbol": "じゅうはち",
+                        "meaning": "18"
+                    },
+                    {
+                        "name": "juukyuu",
+                        "symbol": "じゅうきゅう",
+                        "meaning": "19"
+                    },
+                    {
+                        "name": "nijuu)",
+                        "symbol": "にじゅう",
+                        "meaning": "20"
+                    },
+                    {
+                        "name": "nijuuichi",
+                        "symbol": "にじゅういち",
+                        "meaning": "21"
+                    },
+                    {
+                        "name": "nijuuni",
+                        "symbol": "にじゅうに",
+                        "meaning": "22"
+                    },
+                    {
+                        "name": "nijuusan",
+                        "symbol": "にじゅうさん",
+                        "meaning": "23"
+                    },
+                    {
+                        "name": "nijuuyon",
+                        "symbol": "にじゅうよん",
+                        "meaning": "24"
+                    },
+                    {
+                        "name": "nijuugo",
+                        "symbol": "にじゅうご",
+                        "meaning": "25"
+                    },
+                    {
+                        "name": "nijuuroku",
+                        "symbol": "にじゅうろく",
+                        "meaning": "26"
+                    },
+                    {
+                        "name": "nijuunana",
+                        "symbol": "にじゅうなな",
+                        "meaning": "27"
+                    },
+                    {
+                        "name": "nijuuhachi",
+                        "symbol": "にじゅうはち",
+                        "meaning": "28"
+                    },
+                    {
+                        "name": "nijuukyuu",
+                        "symbol": "にじゅうきゅう",
+                        "meaning": "29"
+                    },
+                    {
+                        "name": "sanjuu",
+                        "symbol": "さんじゅう",
+                        "meaning": "30"
+                    },
+                    {
+                        "name": "sanjuuichi",
+                        "symbol": "さんじゅういち",
+                        "meaning": "31"
+                    },
+                    {
+                        "name": "sanjuuni",
+                        "symbol": "さんじゅうに",
+                        "meaning": "32"
+                    },
+                    {
+                        "name": "sanjuusan",
+                        "symbol": "さんじゅうさん",
+                        "meaning": "33"
+                    },
+                    {
+                        "name": "sanjuuyon",
+                        "symbol": "さんじゅうよん",
+                        "meaning": "34"
+                    },
+                    {
+                        "name": "sanjuugo",
+                        "symbol": "さんじゅうご",
+                        "meaning": "35"
+                    },
+                    {
+                        "name": "sanjuuroku",
+                        "symbol": "さんじゅうろく",
+                        "meaning": "36"
+                    },
+                    {
+                        "name": "sanjuunana",
+                        "symbol": "さんじゅうなな",
+                        "meaning": "37"
+                    },
+                    {
+                        "name": "sanjuuhachi",
+                        "symbol": "さんじゅうはち",
+                        "meaning": "38"
+                    },
+                    {
+                        "name": "sanjuukyuu",
+                        "symbol": "さんじゅうきゅう",
+                        "meaning": "39"
+                    },
+                    {
+                        "name": "yonjuu",
+                        "symbol": "よんじゅう",
+                        "meaning": "40"
+                    },
+                    {
+                        "name": "yonjuuichi",
+                        "symbol": "よんじゅういち",
+                        "meaning": "41"
+                    },
+                    {
+                        "name": "yonjuuni",
+                        "symbol": "よんじゅうに",
+                        "meaning": "42"
+                    },
+                    {
+                        "name": "yonjuusan",
+                        "symbol": "よんじゅうさん",
+                        "meaning": "43"
+                    },
+                    {
+                        "name": "yonjuuyon",
+                        "symbol": "よんじゅうよん",
+                        "meaning": "44"
+                    },
+                    {
+                        "name": "yonjuugo",
+                        "symbol": "よんじゅうご",
+                        "meaning": "45"
+                    },
+                    {
+                        "name": "yonjuuroku",
+                        "symbol": "よんじゅうろく",
+                        "meaning": "46"
+                    },
+                    {
+                        "name": "yonjuunana",
+                        "symbol": "よんじゅうなな",
+                        "meaning": "47"
+                    },
+                    {
+                        "name": "yonjuuhachi",
+                        "symbol": "よんじゅうはち",
+                        "meaning": "48"
+                    },
+                    {
+                        "name": "yonjuukyuu",
+                        "symbol": "よんじゅうきゅう",
+                        "meaning": "49"
+                    },
+                    {
+                        "name": "gojuu",
+                        "symbol": "ごじゅう",
+                        "meaning": "50"
+                    },
+                    {
+                        "name": "gojuuichi",
+                        "symbol": "ごじゅういち",
+                        "meaning": "51"
+                    },
+                    {
+                        "name": "gojuuni",
+                        "symbol": "ごじゅうに",
+                        "meaning": "52"
+                    },
+                    {
+                        "name": "gojuusan",
+                        "symbol": "ごじゅうさん",
+                        "meaning": "53"
+                    },
+                    {
+                        "name": "gojuuyon",
+                        "symbol": "ごじゅうよん",
+                        "meaning": "54"
+                    },
+                    {
+                        "name": "gojuugo",
+                        "symbol": "ごじゅうご",
+                        "meaning": "55"
+                    },
+                    {
+                        "name": "gojuuroku",
+                        "symbol": "ごじゅうろく",
+                        "meaning": "56"
+                    },
+                    {
+                        "name": "gojuunana",
+                        "symbol": "ごじゅうなな",
+                        "meaning": "57"
+                    },
+                    {
+                        "name": "gojuuhachi",
+                        "symbol": "ごじゅうはち",
+                        "meaning": "58"
+                    },
+                    {
+                        "name": "gojuukyuu",
+                        "symbol": "ごじゅうきゅう",
+                        "meaning": "59"
+                    },
+                    {
+                        "name": "rokujuu",
+                        "symbol": "ろくじゅう",
+                        "meaning": "60"
+                    },
+                    {
+                        "name": "rokujuuichi",
+                        "symbol": "ろくじゅういち",
+                        "meaning": "61"
+                    },
+                    {
+                        "name": "rokujuuni",
+                        "symbol": "ろくじゅうに",
+                        "meaning": "62"
+                    },
+                    {
+                        "name": "rokujuusan",
+                        "symbol": "ろくじゅうさん",
+                        "meaning": "63"
+                    },
+                    {
+                        "name": "rokujuuyon",
+                        "symbol": "ろくじゅうよん",
+                        "meaning": "64"
+                    },
+                    {
+                        "name": "rokujuugo",
+                        "symbol": "ろくじゅうご",
+                        "meaning": "65"
+                    },
+                    {
+                        "name": "rokujuuroku",
+                        "symbol": "ろくじゅうろく",
+                        "meaning": "66"
+                    },
+                    {
+                        "name": "rokujuunana",
+                        "symbol": "ろくじゅうなな",
+                        "meaning": "67"
+                    },
+                    {
+                        "name": "rokujuuhachi",
+                        "symbol": "ろくじゅうはち",
+                        "meaning": "68"
+                    },
+                    {
+                        "name": "rokujuukyuu",
+                        "symbol": "ろくじゅうきゅう",
+                        "meaning": "69"
+                    },
+                    {
+                        "name": "nanajuu",
+                        "symbol": "ななじゅう",
+                        "meaning": "70"
+                    },
+                    {
+                        "name": "nanajuuichi",
+                        "symbol": "ななじゅういち",
+                        "meaning": "71"
+                    },
+                    {
+                        "name": "nanajuuni",
+                        "symbol": "ななじゅうに",
+                        "meaning": "72"
+                    },
+                    {
+                        "name": "nanajuusan",
+                        "symbol": "ななじゅうさん",
+                        "meaning": "73"
+                    },
+                    {
+                        "name": "nanajuuyon",
+                        "symbol": "ななじゅうよん",
+                        "meaning": "74"
+                    },
+                    {
+                        "name": "nanajuugo",
+                        "symbol": "ななじゅうご",
+                        "meaning": "75"
+                    },
+                    {
+                        "name": "nanajuuroku",
+                        "symbol": "ななじゅうろく",
+                        "meaning": "76"
+                    },
+                    {
+                        "name": "nanajuunana",
+                        "symbol": "ななじゅうなな",
+                        "meaning": "77"
+                    },
+                    {
+                        "name": "nanajuuhachi",
+                        "symbol": "ななじゅうはち",
+                        "meaning": "78"
+                    },
+                    {
+                        "name": "nanajuukyuu",
+                        "symbol": "ななじゅうきゅう",
+                        "meaning": "79"
+                    },
+                    {
+                        "name": "hachijuu",
+                        "symbol": "はちじゅう",
+                        "meaning": "80"
+                    },
+                    {
+                        "name": "hachijuuichi",
+                        "symbol": "はちじゅういち",
+                        "meaning": "81"
+                    },
+                    {
+                        "name": "hachijuuni",
+                        "symbol": "はちじゅうに",
+                        "meaning": "82"
+                    },
+                    {
+                        "name": "hachijuusan",
+                        "symbol": "はちじゅうさん",
+                        "meaning": "83"
+                    },
+                    {
+                        "name": "hachijuuyon",
+                        "symbol": "はちじゅうよん",
+                        "meaning": "84"
+                    },
+                    {
+                        "name": "hachijuugo",
+                        "symbol": "はちじゅうご",
+                        "meaning": "85"
+                    },
+                    {
+                        "name": "hachijuuroku",
+                        "symbol": "はちじゅうろく",
+                        "meaning": "86"
+                    },
+                    {
+                        "name": "hachijuunana",
+                        "symbol": "はちじゅうなな",
+                        "meaning": "87"
+                    },
+                    {
+                        "name": "hachijuuhachi",
+                        "symbol": "はちじゅうはち",
+                        "meaning": "88"
+                    },
+                    {
+                        "name": "hachijuukyuu",
+                        "symbol": "はちじゅうきゅう",
+                        "meaning": "89"
+                    },
+                    {
+                        "name": "kyuujuu",
+                        "symbol": "きゅうじゅう",
+                        "meaning": "90"
+                    },
+                    {
+                        "name": "kyuujuuichi",
+                        "symbol": "きゅうじゅういち",
+                        "meaning": "91"
+                    },
+                    {
+                        "name": "kyuujuuni",
+                        "symbol": "きゅうじゅうに",
+                        "meaning": "92"
+                    },
+                    {
+                        "name": "kyuujuusan",
+                        "symbol": "きゅうじゅうさん",
+                        "meaning": "93"
+                    },
+                    {
+                        "name": "kyuujuuyon",
+                        "symbol": "きゅうじゅうよん",
+                        "meaning": "94"
+                    },
+                    {
+                        "name": "kyuujuugo",
+                        "symbol": "きゅうじゅうご",
+                        "meaning": "95"
+                    },
+                    {
+                        "name": "kyuujuuroku",
+                        "symbol": "きゅうじゅうろく",
+                        "meaning": "96"
+                    },
+                    {
+                        "name": "kyuujuunana",
+                        "symbol": "きゅうじゅうなな",
+                        "meaning": "97"
+                    },
+                    {
+                        "name": "kyuujuuhachi",
+                        "symbol": "きゅうじゅうはち",
+                        "meaning": "98"
+                    },
+                    {
+                        "name": "kyuujuukyuu",
+                        "symbol": "きゅうじゅうきゅう",
+                        "meaning": "99"
+                    },
+                    {
+                        "name": "hyaku",
+                        "symbol": "ひゃく",
+                        "meaning": "100"
+                    }]
+                  },
+                  {
+                    "name": "Common Words",
+                    "words": [
+                        {
+                            "symbol": "しも ません",
+                            "name": "Shimomasen",
+                            "meaning": "I don't know"
+                        },{
+                            "symbol": "あなた わ",
+                            "name": "Watashi wa",
+                            "meaning": "I am"
+                        },{
+                            "symbol": "あなた わ",
+                            "name": "Anata wa",
+                            "meaning": "You are"
+                        },{
+                            "symbol": "はい",
+                            "name": "Hai",
+                            "meaning": "Yes"
+                        },{
+                            "symbol": "いいえ",
+                            "name": "iie",
+                            "meaning": "No"
+                        },{
+                            "symbol": "もいちど",
+                            "name": "Moichido",
+                            "meaning": "Please Repeat"
+                        },{
+                            "symbol": "あさ",
+                            "name": "Asa",
+                            "meaning": "Morning"
+                        },{
+                            "symbol": "うち",
+                            "name": "Uchi",
+                            "meaning": "House"
+                        },{
+                            "symbol": "いす",
+                            "name": "isu",
+                            "meaning": "Chair"
+                        },{
+                            "symbol": "えき",
+                            "name": "eki",
+                            "meaning": "Station"
+                        },{
+                            "symbol": "くすり",
+                            "name": "kusuri",
+                            "meaning": "Tablet (medicine)"
+                        }
+                    ]
+                  }
+                ]
+              },{
+                "name": "Katakana Charts",
+                "options": [
+                  {
+                    "name": "Chart 1 (Without Dakuten)",
+                    "words": [{
+                        "symbol": "ア",
+                        "name": "a",
+                        "meaning": ""
+                    },{
+                        "symbol": "イ",
+                        "name": "i",
+                        "meaning": ""
+                    },{
+                        "symbol": "ウ",
+                        "name": "u",
+                        "meaning": ""
+                    },{
+                        "symbol": "エ",
+                        "name": "e",
+                        "meaning": ""
+                    },{
+                        "symbol": "オ",
+                        "name": "o",
+                        "meaning": ""
+                    },{
+                        "symbol": "カ",
+                        "name": "ka",
+                        "meaning": ""
+                    },{
+                        "symbol": "キ",
+                        "name": "ki",
+                        "meaning": ""
+                    },{
+                        "symbol": "ク",
+                        "name": "ku",
+                        "meaning": ""
+                    },{
+                        "symbol": "ケ",
+                        "name": "ke",
+                        "meaning": ""
+                    },{
+                        "symbol": "コ",
+                        "name": "ko",
+                        "meaning": ""
+                    },{
+                        "symbol": "サ",
+                        "name": "sa",
+                        "meaning": ""
+                    },{
+                        "symbol": "シ",
+                        "name": "shi",
+                        "meaning": ""
+                    },{
+                        "symbol": "ス",
+                        "name": "su",
+                        "meaning": ""
+                    },{
+                        "symbol": "セ",
+                        "name": "se",
+                        "meaning": ""
+                    },{
+                        "symbol": "ソ",
+                        "name": "so",
+                        "meaning": ""
+                    },{
+                        "symbol": "タ",
+                        "name": "ta",
+                        "meaning": ""
+                    },{
+                        "symbol": "チ",
+                        "name": "chi",
+                        "meaning": ""
+                    },{
+                        "symbol": "ツ",
+                        "name": "tsu",
+                        "meaning": ""
+                    },{
+                        "symbol": "テ",
+                        "name": "te",
+                        "meaning": ""
+                    },{
+                        "symbol": "ト",
+                        "name": "to",
+                        "meaning": ""
+                    },{
+                        "symbol": "ナ",
+                        "name": "na",
+                        "meaning": ""
+                    },{
+                        "symbol": "ニ",
+                        "name": "ni",
+                        "meaning": ""
+                    },{
+                        "symbol": "ヌ",
+                        "name": "nu",
+                        "meaning": ""
+                    },{
+                        "symbol": "ネ",
+                        "name": "ne",
+                        "meaning": ""
+                    },{
+                        "symbol": "ノ",
+                        "name": "no",
+                        "meaning": ""
+                    },{
+                        "symbol": "ハ",
+                        "name": "ha",
+                        "meaning": ""
+                    },{
+                        "symbol": "ヒ",
+                        "name": "hi",
+                        "meaning": ""
+                    },{
+                        "symbol": "フ",
+                        "name": "fu",
+                        "meaning": ""
+                    },{
+                        "symbol": "ヘ",
+                        "name": "he",
+                        "meaning": ""
+                    },{
+                        "symbol": "ホ",
+                        "name": "ho",
+                        "meaning": ""
+                    },{
+                        "symbol": "マ",
+                        "name": "ma",
+                        "meaning": ""
+                    },{
+                        "symbol": "ミ",
+                        "name": "mi",
+                        "meaning": ""
+                    },{
+                        "symbol": "ム",
+                        "name": "mu",
+                        "meaning": ""
+                    },{
+                        "symbol": "メ",
+                        "name": "me",
+                        "meaning": ""
+                    },{
+                        "symbol": "モ",
+                        "name": "mo",
+                        "meaning": ""
+                    },{
+                        "symbol": "ヤ",
+                        "name": "ya",
+                        "meaning": ""
+                    },{
+                        "symbol": "ユ",
+                        "name": "yu",
+                        "meaning": ""
+                    },{
+                        "symbol": "ヨ",
+                        "name": "yo",
+                        "meaning": ""
+                    },{
+                        "symbol": "ラ",
+                        "name": "ra",
+                        "meaning": ""
+                    },{
+                        "symbol": "リ",
+                        "name": "ri",
+                        "meaning": ""
+                    },{
+                        "symbol": "ル",
+                        "name": "ru",
+                        "meaning": ""
+                    },{
+                        "symbol": "レ",
+                        "name": "re",
+                        "meaning": ""
+                    },{
+                        "symbol": "ロ",
+                        "name": "ro",
+                        "meaning": ""
+                    },{
+                        "symbol": "ワ",
+                        "name": "wa",
+                        "meaning": ""
+                    },{
+                        "symbol": "ヲ",
+                        "name": "o",
+                        "meaning": ""
+                    },{
+                        "symbol": "ン",
+                        "name": "n",
+                        "meaning": ""
+                    }]
+                  },
+                  {
+                    "name": "Chart 2 (With Dakuten)",
+                    "words": [{
+                        "symbol": "ガ",
+                        "name": "ga",
+                        "meaning": ""
+                    },{
+                        "symbol": "ギ",
+                        "name": "gi",
+                        "meaning": ""
+                    },{
+                        "symbol": "グ",
+                        "name": "gu",
+                        "meaning": ""
+                    },{
+                        "symbol": "ゲ",
+                        "name": "ge",
+                        "meaning": ""
+                    },{
+                        "symbol": "ゴ",
+                        "name": "go",
+                        "meaning": ""
+                    },{
+                        "symbol": "ザ",
+                        "name": "za",
+                        "meaning": ""
+                    },{
+                        "symbol": "ジ",
+                        "name": "zi",
+                        "meaning": ""
+                    },{
+                        "symbol": "ズ",
+                        "name": "zu",
+                        "meaning": ""
+                    },{
+                        "symbol": "ゼ",
+                        "name": "ze",
+                        "meaning": ""
+                    },{
+                        "symbol": "ゾ",
+                        "name": "zo",
+                        "meaning": ""
+                    },{
+                        "symbol": "ダ",
+                        "name": "da",
+                        "meaning": ""
+                    },{
+                        "symbol": "ヂ",
+                        "name": "di",
+                        "meaning": ""
+                    },{
+                        "symbol": "ヅ",
+                        "name": "du",
+                        "meaning": ""
+                    },{
+                        "symbol": "デ",
+                        "name": "de",
+                        "meaning": ""
+                    },{
+                        "symbol": "ド",
+                        "name": "do",
+                        "meaning": ""
+                    },{
+                        "symbol": "バ",
+                        "name": "ba",
+                        "meaning": ""
+                    },{
+                        "symbol": "ビ",
+                        "name": "bi",
+                        "meaning": ""
+                    },{
+                        "symbol": "ブ",
+                        "name": "bu",
+                        "meaning": ""
+                    },{
+                        "symbol": "ベ",
+                        "name": "be",
+                        "meaning": ""
+                    },{
+                        "symbol": "ボ",
+                        "name": "bo",
+                        "meaning": ""
+                    },{
+                        "symbol": "パ",
+                        "name": "pa",
+                        "meaning": ""
+                    },{
+                        "symbol": "ピ",
+                        "name": "pi",
+                        "meaning": ""
+                    },{
+                        "symbol": "プ",
+                        "name": "pu",
+                        "meaning": ""
+                    },{
+                        "symbol": "ペ",
+                        "name": "pe",
+                        "meaning": ""
+                    },{
+                        "symbol": "ポ",
+                        "name": "po",
+                        "meaning": ""
+                    }]
+                  }
+                ]
+              }
+        ]
+      }
+</script>
+
+
+<script>
+// Initialize Firebase
+var fb = firebase.initializeApp(firebaseConfig);
+db = firebase.firestore()
+nanoseconds = 0
+async function addWords(){
+    data["Words"].forEach(section => {
+        db.collection("Words")
+                .add({
+                    addTime: firebase.firestore.Timestamp.fromMillis(nanoseconds++),
+                    name: section.name,
+                })
+                .then(function(docRef) {
+                    section.options.forEach(option => {
+                        db.collection("Words/"+docRef.id+"/Options")
+                            .add({
+                                addTime: firebase.firestore.Timestamp.fromMillis(nanoseconds++),
+                                name: option.name
+                            }).then(function(optRef){
+                                option.words.forEach(w => {
+                                    db.collection("Words/"+docRef.id+"/Options/"+optRef.id+'/Words')
+                                    .add({
+                                        addTime: firebase.firestore.Timestamp.fromMillis(nanoseconds++),
+                                        symbol: w.symbol,
+                                        name: w.name,
+                                        meaning: w.meaning
+                                    }).then(function (){
+                                        console.log(w.name)
+                                    })
+                                })
+                            })
+                    })
+                })
+    })
+}
+</script>

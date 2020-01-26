@@ -31,7 +31,6 @@ function playTimeout(time, callback) {
     var timer = setInterval(() => {
         if (run) {
             $('.timing').css('width', offset.toString()+"%").css('background',pickHex([255, 0, 0], [75, 181, 67], offset / 100))
-            offset += onePart
             if(skip == true){
                 if(callback.name == "displayItem"){
                     if(leftSkip){
@@ -41,6 +40,8 @@ function playTimeout(time, callback) {
                     obkp = offset+onePart*5
                     offset = 100
                 }
+            }else{
+                offset += onePart
             }
             if (offset >= 100) {
                 if(callback.name == "displayItem"){

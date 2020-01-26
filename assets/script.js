@@ -7,17 +7,12 @@ obkp = 0
 
 displayItem = function () {
     var rand = totalWords[Math.floor(Math.random() * totalWords.length)];
-    fs = 150/Math.pow((rand.symbol.length),0.7)
-    fs = (fs < 25)? '25': fs.toString()
-    $('.symbolText').css('font-size', fs + 'px')
-    $('.symbolText').html(rand.symbol)
+    $('.symbolBox').html(rand.symbol)
     $('#desc').html('')
     $('#mean').html('')
     playTimeout(5000, function () {
-        $('#desc').css('font-size', 40/Math.pow((rand.name.length),0.2).toString() + 'px')
         $('#desc').html(rand.name)
         if(rand.meaning){
-            $('#mean').css('font-size', 40/Math.pow((rand.meaning.length),0.2).toString() + 'px')
             $('#mean').html(rand.meaning)
         }
         playTimeout(5000, displayItem)
@@ -26,7 +21,7 @@ displayItem = function () {
 
 function playTimeout(time, callback) {
     smoothness = 10 // The Lower the better
-    var onePart = (544 / time) * smoothness
+    var onePart = (100 / time) * smoothness
     if(obkp != 0){
         offset = obkp
         obkp = 0
@@ -35,19 +30,19 @@ function playTimeout(time, callback) {
     }
     var timer = setInterval(() => {
         if (run) {
-            $(".js-circle-countdown").attr("stroke-dashoffset", offset).attr('stroke', pickHex([255, 0, 0], [75, 181, 67], offset / 456));
+            $('.timing').css('width', offset.toString()+"%").css('background',pickHex([255, 0, 0], [75, 181, 67], offset / 100))
             offset += onePart
             if(skip == true){
                 if(callback.name == "displayItem"){
                     if(leftSkip){
-                        offset = 544
+                        offset = 100
                     }
                 }else{
                     obkp = offset+onePart*5
-                    offset = 544
+                    offset = 100
                 }
             }
-            if (offset >= 544) {
+            if (offset >= 100) {
                 if(callback.name == "displayItem"){
                     skip = false
                 }
@@ -97,26 +92,19 @@ showOptions = function () {
     });
 }
 
-loadPractice = function (url = null) {
+loadPractice = function () {
     present = false
-    if(url!=null){
-        fetch(url).then(response => response.json()).then(data => {
-            totalWords.push(...data)
-            if (!isLoaded) {
-                displayItem();
-                isLoaded = true
-            }
-        })
-    }
     $('.option').each((i, o) => {
         if ($(o).is(":checked")) {
             present = true
+            console.log("true")
             db.collection("/Words/"+$(o).attr('loc').split(',')[0]+"/Options/"+$(o).attr('loc').split(',')[1]+"/Words").orderBy("addTime").get().then(function(querySnapshot) {
                 data = []
                 querySnapshot.forEach(function(doc) {
                     data.push(doc.data())
                     totalWords.push(...data)
                     if (!isLoaded) {
+                        console.log("Loaded")
                         displayItem();
                         isLoaded = true
                     }
@@ -124,13 +112,13 @@ loadPractice = function (url = null) {
             });
         }
     })
-    if(!present && (url == null)){
+    if(!present){
         alert('Please Select atleast One Option')
         return
     }
     $('.menu').hide()
-    $('.practice').fadeIn()
-    $('.gameBox').height($('.gameBox').width())
+    $('.gameBox').fadeIn()
+    
 }
 
 function showWords(i,j,name){
@@ -257,3 +245,23 @@ function addWordTOLesson(){
         $('#meaning').val('')
     });
 }
+
+
+window.addEventListener("keydown", event => {
+    if (event.code == "Space") {
+        run=false
+    }
+    if (event.code == "Enter") {
+        skip=true;leftSkip=false
+    }
+});
+
+
+window.addEventListener("keyup", event => {
+    if (event.code == "Space") {
+        run=true
+    }
+    if (event.code == "Enter") {
+        leftSkip=true
+    }
+});

@@ -1,12 +1,12 @@
 .outerBox {
-    background: #2c3e50;
-    height: 100vh;
+    background: #2f3542;
+    // height: 100vh;
 }
 
 body {
     font-family: 'IBM Plex 'Sans;
-    color: #ecf0f1;
-    background: #2c3e50;
+    color: #ffffff;
+    background: #2f3542;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -19,47 +19,6 @@ h1, h2{
     font-family: "Fugaz One";
 }
 
-.gameBox {
-    height: 500px;
-    // background: #e74c3c;
-    margin: auto;
-
-    .dataOuter {
-        display: table;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-
-        .dataMiddle {
-            display: table-cell;
-            vertical-align: middle;
-        }
-
-        .dataBottom {
-            font-family: 'IBM Plex Sans';
-            font-weight: 900;
-            display: table-cell;
-            vertical-align: bottom;
-            font-size: 40px;
-            padding-bottom: 40px;
-            color: #95a5a6;
-        }
-
-        .dataInner {
-            margin-left: auto;
-            margin-right: auto;
-            display: table;
-            text-align: center;
-            padding: 25px;
-
-            .symbolText {
-                font-size: 150px;
-            }
-        }
-    }
-}
 
 .head.custom-control-label::before, 
 .head.custom-control-label::after,
@@ -81,8 +40,8 @@ h1, h2{
 
 .checkbox-success input[type="checkbox"]:checked + label::before,
 .checkbox-success input[type="radio"]:checked + label::before {
-  background-color: #5cb85c;
-  border-color: #5cb85c; }
+  background-color: #2ed573;
+  border-color: #2ed573; }
 
 
 
@@ -100,4 +59,47 @@ h1, h2{
 
 .overflow{
     overflow: auto;
+}
+
+// .testDialog{
+//     border: 10px solid #57606f;
+//     text-align: center;
+//     padding: 15px;
+//     padding-top: 30px;
+//     padding-bottom: 30px;
+//     font-size: 4em;
+//     font-weight: 900;
+//     margin: 60px;
+// }
+
+div.gameBox {
+    height: 80vh;
+    position: relative }
+div.gameBox p {
+    text-align: center;
+    margin: 0;
+    width:100%;
+    &.symbolBox{
+        box-shadow: 0px 0px 30px #222;
+        margin-top: 50px;
+        color: #2f3542;
+        font-size: 80px;
+        font-weight: 900;
+        background: #ffffff;
+    }
+    &.Pronounciation{
+        margin-top: 50px;
+        color: #a4b0be;
+        font-size: 50px;
+    }
+    &.meaning{
+        color: #ffffff;
+        font-size: 60px;
+        font-weight: 900;
+    }
+
+}
+.timing{
+    height: 20px;
+    width: 0px;
 }

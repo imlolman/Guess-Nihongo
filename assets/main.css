@@ -1,12 +1,11 @@
 .outerBox {
-  background: #2c3e50;
-  height: 100vh;
+  background: #2f3542;
 }
 
 body {
   font-family: 'IBM Plex 'Sans;
-  color: #ecf0f1;
-  background: #2c3e50;
+  color: #ffffff;
+  background: #2f3542;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -16,47 +15,6 @@ body {
 
 h1, h2 {
   font-family: "Fugaz One";
-}
-
-.gameBox {
-  height: 500px;
-  margin: auto;
-}
-
-.gameBox .dataOuter {
-  display: table;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
-
-.gameBox .dataOuter .dataMiddle {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.gameBox .dataOuter .dataBottom {
-  font-family: 'IBM Plex Sans';
-  font-weight: 900;
-  display: table-cell;
-  vertical-align: bottom;
-  font-size: 40px;
-  padding-bottom: 40px;
-  color: #95a5a6;
-}
-
-.gameBox .dataOuter .dataInner {
-  margin-left: auto;
-  margin-right: auto;
-  display: table;
-  text-align: center;
-  padding: 25px;
-}
-
-.gameBox .dataOuter .dataInner .symbolText {
-  font-size: 150px;
 }
 
 .head.custom-control-label::before,
@@ -80,8 +38,8 @@ h1, h2 {
 
 .checkbox-success input[type="checkbox"]:checked + label::before,
 .checkbox-success input[type="radio"]:checked + label::before {
-  background-color: #5cb85c;
-  border-color: #5cb85c;
+  background-color: #2ed573;
+  border-color: #2ed573;
 }
 
 .buttons {
@@ -99,5 +57,43 @@ h1, h2 {
 
 .overflow {
   overflow: auto;
+}
+
+div.gameBox {
+  height: 80vh;
+  position: relative;
+}
+
+div.gameBox p {
+  text-align: center;
+  margin: 0;
+  width: 100%;
+}
+
+div.gameBox p.symbolBox {
+  -webkit-box-shadow: 0px 0px 30px #222;
+          box-shadow: 0px 0px 30px #222;
+  margin-top: 50px;
+  color: #2f3542;
+  font-size: 80px;
+  font-weight: 900;
+  background: #ffffff;
+}
+
+div.gameBox p.Pronounciation {
+  margin-top: 50px;
+  color: #a4b0be;
+  font-size: 50px;
+}
+
+div.gameBox p.meaning {
+  color: #ffffff;
+  font-size: 60px;
+  font-weight: 900;
+}
+
+.timing {
+  height: 20px;
+  width: 0px;
 }
 /*# sourceMappingURL=main.css.map */

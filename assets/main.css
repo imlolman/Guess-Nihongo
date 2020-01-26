@@ -81,14 +81,14 @@ div.gameBox p.symbolBox {
 }
 
 div.gameBox p.Pronounciation {
-  margin-top: 50px;
+  margin-top: 40px;
   color: #a4b0be;
   font-size: 50px;
 }
 
 div.gameBox p.meaning {
   color: #ffffff;
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 900;
 }
 

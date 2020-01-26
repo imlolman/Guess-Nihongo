@@ -103,12 +103,12 @@ loadPractice = function () {
                 querySnapshot.forEach(function(doc) {
                     data.push(doc.data())
                     totalWords.push(...data)
-                    if (!isLoaded) {
-                        console.log("Loaded")
-                        displayItem();
-                        isLoaded = true
-                    }
                 })
+                if (!isLoaded) {
+                    console.log("Loaded")
+                    displayItem();
+                    isLoaded = true
+                }
             });
         }
     })

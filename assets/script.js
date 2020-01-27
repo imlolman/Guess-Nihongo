@@ -266,3 +266,12 @@ window.addEventListener("keyup", event => {
         leftSkip=true
     }
 });
+
+function makeItSpeak(){
+    fetch(`https://corsbypassbyimlolman.000webhostapp.com/text-to-voice-nihongo.php?word=${$('.symbolBox').html()}`).then(response => response.json()).then(data => playAudio(data.URL))
+}
+
+function playAudio(URL){
+    var audio = new Audio(URL);
+    audio.play();
+}
